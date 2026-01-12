@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.hmosdemos.coinanddice",
+    "bundleName": "com.hmosdemos.wearable.coin_and_dice",
     "vendor": "hmosdemos",
     "versionCode": 1000000,
     "versionName": "1.0.0",

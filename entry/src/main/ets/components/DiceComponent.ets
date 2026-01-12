@@ -1,5 +1,6 @@
 import lottie, { AnimationItem } from '@ohos/lottie';
 import Logger from '../utils/Logger';
+import { generateSecureRandomNumber } from '../utils/Utils';
 
 @Component
 export struct DiceComponent {
@@ -36,8 +37,9 @@ export struct DiceComponent {
    */
   private rollDice() {
     this.animateItem?.goToAndPlay(0, true);
-    let diceNumber: number = Math.floor(Math.random() * 6); // 0 to 5
-    this.frameToShow = diceNumber * 6 + 1; // Start frame of that dice face
+    let diceNumber: number = generateSecureRandomNumber(0, 5); // 0 to 5
+    const rounded = Math.round(diceNumber);
+    this.frameToShow = rounded * 6 + 1; // Start frame of that dice face
   }
 
   /**
@@ -72,7 +74,7 @@ export struct DiceComponent {
         autoplay: false,
         name: this.animateName,
         contentMode: 'Contain',
-        path: 'common/dice.json',
+        path: 'common/dice.json'
       });
     } catch (error) {
       Logger.error(`Error loading Lottie animation: ${error}`);

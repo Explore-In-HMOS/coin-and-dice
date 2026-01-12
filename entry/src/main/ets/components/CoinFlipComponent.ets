@@ -1,5 +1,6 @@
 import lottie, { AnimationItem } from '@ohos/lottie';
 import Logger from '../utils/Logger';
+import { generateSecureRandomNumber } from '../utils/Utils';
 
 @Component
 export struct CoinFlipComponent {
@@ -22,7 +23,9 @@ export struct CoinFlipComponent {
         .onClick(() => {
           this.showCoinResult = false;
           this.animateItem?.goToAndPlay(0, true);
-          this.isHeadCoin = Math.random() < 0.5;
+          const rand = generateSecureRandomNumber(1, 2)
+          const rounded = Math.round(rand);
+          this.isHeadCoin = rounded === 1;
         });
       if (this.showCoinResult) {
         Image(this.isHeadCoin ? $r('app.media.ic_coin_head') : $r('app.media.ic_coin_tail'))
@@ -48,7 +51,7 @@ export struct CoinFlipComponent {
         autoplay: false,
         name: this.animateName,
         contentMode: 'Contain',
-        path: 'common/coin.json',
+        path: 'common/coin.json'
       });
 
       this.animateItem.addEventListener('complete', () => {

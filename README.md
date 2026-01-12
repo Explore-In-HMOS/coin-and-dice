@@ -27,10 +27,11 @@ experiences. Through simple interactions like coin flips and dice rolls, it high
 - **Libraries**:
     - `@kit.AbilityKit`
     - `@kit.ArkUI`
+    - `@kit.CryptoArchitectureKit`
     - `@kit.PerformanceAnalysisKit`
     - `@ohos/lottie`
 
-# Project Directory
+# Directory Structure
 
 ```
 ├──entry/src/main/ets/
@@ -52,7 +53,7 @@ experiences. Through simple interactions like coin flips and dice rolls, it high
 
 - Huawei Watch 5
 
-# LICENSE
+# License
 
 **Coin Flip & Dice Rolling** is distributed under the terms of the MIT License.
 See the [license](/LICENSE) for more information.
